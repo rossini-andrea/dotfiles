@@ -1,0 +1,31 @@
+#!/usr/bin/env fish
+
+# Ensure single instance
+set -l LOCKDIR /tmp/desktop-audio-compressor-lock
+if not mkdir $LOCKDIR
+    exit 1
+end
+
+set -l CALF_CLIENT calf-desktop-audio-compressor
+
+# Start calf host and wait a bit
+calfjackhost -c $CALF_CLIENT --load ~/calf-host/desktop-compressor &
+set -l calf_pid $last_pid
+
+sleep 2
+
+# Connect Desktop Sink -> Compressor -> Sound Card, and set Desktop Sink
+# as default for Pulseaudio apps.
+pw-link "Desktop Sink:monitor_FL" "$CALF_CLIENT:Compressor In #1"
+pw-link "Desktop Sink:monitor_FR" "$CALF_CLIENT:Compressor In #2"
+pw-link "$CALF_CLIENT:Compressor Out #1" "alsa_output.usb-Focusrite_Scarlett_Solo_USB-00.pro-output-0:playback_AUX0"
+pw-link "$CALF_CLIENT:Compressor Out #2" "alsa_output.usb-Focusrite_Scarlett_Solo_USB-00.pro-output-0:playback_AUX1"
+pactl set-default-sink "Desktop Sink"
+
+# Wait and clean up
+wait $calf_pid
+pactl set-default-sink alsa_output.usb-Focusrite_Scarlett_Solo_USB-00.pro-output-0
+
+if not rmdir $LOCKDIR
+    swaynag -m "Failed to remove $LOCKDIR" -s '❌'
+end

@@ -1,0 +1,39 @@
+#!/usr/bin/env fish
+
+set -l options (fish_opt -s m -l message --optional-val)
+set options $options (fish_opt -s t -l title --optional-val)
+argparse $options -- $argv
+
+set -l dialog_items
+set -l i 0
+
+while true
+    set -l item $argv[(math "$i*2+1")]
+
+    if not string length -q -- $item
+        break
+    end
+
+    set -a dialog_items (math $i+1)
+    set -a dialog_items $item
+    set i (math $i+1)
+end
+
+echo $dialog_items
+
+set -l choice ( \
+dialog \
+    --stdout \
+    --title $_flag_t \
+    --clear \
+    --cancel-label "❌" \
+    --menu $_flag_m 15 30 8 \
+    $dialog_items
+)
+
+if test $status -ne 0
+    exit
+end
+
+set -l command $argv[(math "$choice*2")]
+eval $command

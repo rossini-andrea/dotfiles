@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="utf-8"?>
+<rack><plugin type="compressor" instance-name="Compressor" input-index="5" output-index="7">
+<preset bank="0" program="0" plugin="compressor" name="">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="threshold" value="0.0473661" />
+  <param name="ratio" value="6.86332" />
+  <param name="attack" value="11.1322" />
+  <param name="release" value="250" />
+  <param name="makeup" value="4.39542" />
+  <param name="knee" value="8" />
+  <param name="detection" value="0" />
+  <param name="stereo_link" value="0" />
+  <param name="compression" value="1" />
+  <param name="mix" value="1" />
+</preset>
+</plugin>
+</rack>

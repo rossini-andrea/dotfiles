@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+
+disown (xdg-open https://wiki.archlinux.org/title/$argv[1] &> /dev/null &)
+

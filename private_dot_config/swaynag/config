@@ -1,0 +1,8 @@
+[waybarlike]
+edge=bottom
+background=2b303bbf
+border=00000033
+border-bottom=2b303bbf
+text=FFFFFF
+button-background=00000033
+message-padding=10

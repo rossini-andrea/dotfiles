@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+slurp_point=$(slurp -p)
+swaymsg seat seat0 hide_cursor 100
+sleep 1
+grim -g "$slurp_point" -t png - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+swaymsg seat seat0 hide_cursor 0
+
