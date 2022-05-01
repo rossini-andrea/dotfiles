@@ -114,7 +114,7 @@ input * {
 set $wmexit 	swaymsg exit
 set $lock 		swaymsg exec "swaylock -e -f -c 000000 -i /mnt/g/Foto/20201027-Anya-Photoshoot/DSC_3740.jpg -s fill --indicator-x-position 250 --indicator-y-position 250"
 
-bindsym $mod+Shift+e exec $term -t 'Exit menu' --command dialognag -t'Exit menu' -m'You pressed the exit shortcut. What would you want to do?' 'Logout' '$wmexit' 'Lock screen' '$lock' 'Reboot' 'systemctl reboot' 'Shutdown' 'systemctl poweroff -i'
+bindsym $mod+Shift+e exec $term -t 'Exit menu' --class 'exit_menu' --command dialognag -t'Exit menu' -m'You pressed the exit shortcut. What would you want to do?' 'Logout' '$wmexit' 'Lock screen' '$lock' 'Reboot' 'systemctl reboot' 'Shutdown' 'systemctl poweroff -i'
 
 #
 # Moving around:
@@ -282,7 +282,7 @@ for_window [class="log_tty"] move to workspace number 8
 for_window [app_id="^Alacritty$"] {
     opacity 0.75
 }
-for_window [title="^Exit menu$"] {
+for_window [app_id="exit_menu"] {
     floating enable
     resize set width 314 height 388
     move position center

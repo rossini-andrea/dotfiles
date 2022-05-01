@@ -16,6 +16,11 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
+text/plain=kakwrapper.desktop
+test/plain=kak.desktop
+text/x-c++src=kakwrapper.desktop
+text/x-chdr=kakwrapper.desktop
+text/rust=kakwrapper.desktop
 
 [Added Associations]
 application/vnd.apple.mpegurl=deadbeef.desktop;
