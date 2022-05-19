@@ -20,6 +20,7 @@ alias ls "ls --color=auto"
 alias code "codium"
 alias gallery "sxiv -r ."
 alias st-term "pyserial-miniterm --eol LF -e /dev/ttyACM0 115200"
+alias gitlog "git log --pretty=format:'%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(yellow)%d%C(reset)' --graph --decorate --all"
 
 # Prompt
 

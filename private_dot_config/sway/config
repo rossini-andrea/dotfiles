@@ -36,7 +36,7 @@ set $filemanager exec doublecmd
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /mnt/g/Foto/20201027-Anya-Photoshoot/DSC_3740.jpg fill
+output * bg /mnt/g/Foto/android/IMG_20180715_191606.jpg fill
 #
 # Example configuration:
 #
@@ -286,6 +286,7 @@ for_window [app_id="exit_menu"] {
     floating enable
     resize set width 314 height 388
     move position center
+    opacity 0.75
 }
 
 exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
