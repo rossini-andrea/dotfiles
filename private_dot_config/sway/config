@@ -187,6 +187,9 @@ bindsym $mod+Shift+e exec $term -t 'Exit menu' --class 'exit_menu' --command dia
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+backslash floating toggle
 
+    # Toggle the current focus to sticky ancd back.
+    bindsym $mod+Shift+p sticky toggle
+
     # Swap focus between the tiling area and the floating area
     bindsym $mod+backslash focus mode_toggle
 
