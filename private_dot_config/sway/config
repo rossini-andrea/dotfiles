@@ -294,5 +294,9 @@ for_window [app_id="exit_menu"] {
 
 exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
 
+# Desktop notifications
+exec swaync
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
 include /etc/sway/config.d/*
 
