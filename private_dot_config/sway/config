@@ -291,6 +291,10 @@ for_window [app_id="exit_menu"] {
     move position center
     opacity 0.75
 }
+for_window [title="^Picture-in-Picture$"] {
+	floating enable
+	sticky enable
+}
 
 exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
 
