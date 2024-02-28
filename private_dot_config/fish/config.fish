@@ -34,8 +34,10 @@ end
 # PATH
 set PATH $PATH $HOME/bin $HOME/.local/bin
 
+# ENVIRONMENT
 set -x EDITOR /usr/bin/nvim 
 set -x VISUAL $EDITOR
+set -x FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git"
 
 # Aliases
 alias ls "ls --color=auto"
