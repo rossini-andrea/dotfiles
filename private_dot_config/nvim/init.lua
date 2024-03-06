@@ -11,3 +11,5 @@ local s = vim.keymap.set
 
 s('n', '<F2>', ':buffers<CR>:b ')
 
+require("loadlazy")
+
