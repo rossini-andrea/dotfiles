@@ -1,9 +1,16 @@
 # Functions and aliases to use inside tmux
 
-# Opens Sway as a subcompositor to explore source code in $PWD
+# Opens tmux to explore source code in $PWD
 function tmuxhere
-    set -lx NVIM_SERVER_PIPE /tmp/.nvimt.(string sub -l 32 (echo $PWD | md5sum)).sock
-    tmux new-session -A -s "$PWD" -c $PWD fzfp
+    tmux new-session -A -s "$PWD" -c $PWD _tmuxhere_start
+end
+
+# Runs inside tmux, setting the environment
+function _tmuxhere_start
+    set -l pwdmd5 (string sub -l 32 (echo $PWD | md5sum))
+    set -lx NVIM_SERVER_PIPE /tmp/.nvimt.$pwdmd5.sock
+    tmux setenv -t "$PWD" NVIM_SERVER_PIPE $NVIM_SERVER_PIPE 
+    fzfp
 end
 
 # Open documents in a running nvim server, if running.
