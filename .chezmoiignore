@@ -1,1 +1,15 @@
 README.md
+.confg/pipewire
+.config/pipewire/**
+
+.config/VSCodium
+.config/VSCodium/**
+
+.config/mimeapps.list
+
+.config/kak
+.config/kakrc
+
+.config/alacritty
+.config/alacritty/alacritty.yml
+

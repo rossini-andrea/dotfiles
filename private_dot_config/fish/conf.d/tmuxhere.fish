@@ -14,12 +14,14 @@ function _tmuxhere_start
 end
 
 # Open documents in a running nvim server, if running.
-# Otherwise opens nvim in a new tmux pane.
+# Otherwise opens nvim in a new tmux pane (I am currently
+# experimenting in anotehr window)
 function nvimpane
     if socat -u OPEN:/dev/null UNIX-CONNECT:$NVIM_SERVER_PIPE
         nvim --server $NVIM_SERVER_PIPE --remote $argv
+        tmux selectw -t "main-editor"
     else
-        tmux splitw -h nvim --listen $NVIM_SERVER_PIPE $argv
+        tmux neww -n "main-editor" nvim --listen $NVIM_SERVER_PIPE $argv
     end
 end
 
@@ -29,4 +31,5 @@ function fzfp
         "enter:execute(nvimpane {})"
 end
 
+alias tmh tmuxhere
 
