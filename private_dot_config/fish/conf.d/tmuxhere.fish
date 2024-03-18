@@ -10,7 +10,8 @@ function _tmuxhere_start
     set -l pwdmd5 (string sub -l 32 (echo $PWD | md5sum))
     set -lx NVIM_SERVER_PIPE /tmp/.nvimt.$pwdmd5.sock
     tmux setenv -t "$PWD" NVIM_SERVER_PIPE $NVIM_SERVER_PIPE 
-    fzfp
+    nvimpane
+    fish
 end
 
 # Open documents in a running nvim server, if running.
