@@ -31,6 +31,17 @@ function gitlog
         --graph --decorate --all --full-history
 end
 
+function mytmux -d "Opens a default tmux session"
+    if type -q pwsh.exe
+        # We are on work laptop... I need a Windows shell
+        set -f extras "neww pwsh.exe"
+    end
+
+    tmux new-session -A -s "Default Session" -c ~ \; \
+        split-window -v -- fish -c projexp \; \
+        $extras
+end
+
 # PATH
 set PATH $PATH $HOME/bin $HOME/.local/bin
 
