@@ -1,8 +1,19 @@
 # Functions and aliases to use inside tmux
 
 # Opens tmux to explore source code in $PWD
-function tmuxhere
-    tmux new-session -A -s "$PWD" -c $PWD _tmuxhere_start
+function tmuxhere -a folder -d "Opens tmux to explore source code in working dir or input folder"
+    if test -z "$folder"
+        set -f folder "$PDW"
+    end
+
+    set folder (path resolve "$folder")
+
+    if test -z "$TMUX"
+        tmux new-session -A -s "$folder" -c $folder _tmuxhere_start
+    else
+        tmux new-session -d -s "$folder" -c $folder _tmuxhere_start
+        tmux switch -t "$folder"
+    end
 end
 
 # Runs inside tmux, setting the environment
