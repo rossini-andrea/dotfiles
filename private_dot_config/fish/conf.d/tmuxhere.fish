@@ -3,7 +3,7 @@
 # Opens tmux to explore source code in $PWD
 function tmuxhere -a folder -d "Opens tmux to explore source code in working dir or input folder"
     if test -z "$folder"
-        set -f folder "$PDW"
+        set -f folder "$PWD"
     end
 
     set folder (path resolve "$folder")
