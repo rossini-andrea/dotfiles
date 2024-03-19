@@ -34,7 +34,7 @@ end
 function mytmux -d "Opens a default tmux session"
     if type -q pwsh.exe
         # We are on work laptop... I need a Windows shell
-        set -f extras "neww pwsh.exe"
+        set -f extras neww -n "Powershell" -c $WINHOME pwsh.exe
     end
 
     tmux new-session -A -s "Default Session" -c ~ \; \
