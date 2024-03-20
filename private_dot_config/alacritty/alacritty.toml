@@ -1,0 +1,52 @@
+[colors.bright]
+black = "#666666"
+blue = "#3B8EEA"
+cyan = "#29B8DB"
+green = "#23D18B"
+magenta = "#D670D6"
+red = "#F14C4C"
+white = "#E5E5E5"
+yellow = "#F5F543"
+
+[colors.normal]
+black = "#000000"
+blue = "#2472C8"
+cyan = "#11A8CD"
+green = "#0DBC79"
+magenta = "#BC3FBC"
+red = "#CD3131"
+white = "#E5E5E5"
+yellow = "#E5E510"
+
+[colors.primary]
+background = "#1E1E1E"
+foreground = "#CCCCCC"
+
+[cursor]
+shape = "Beam"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Insert"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[shell]
+args = ["--login"]
+program = "/usr/bin/fish"
