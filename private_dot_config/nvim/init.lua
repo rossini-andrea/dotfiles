@@ -20,6 +20,9 @@ o.incsearch = true
 
 o.scrolloff = 10
 
+o.timeout = false
+o.ttimeout = false
+
 -- Keymappings
 vim.g.mapleader = " "
 local s = vim.keymap.set
