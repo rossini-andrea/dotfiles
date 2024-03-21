@@ -32,14 +32,22 @@ function gitlog
 end
 
 function mytmux -d "Opens a default tmux session"
-    if type -q pwsh.exe
-        # We are on work laptop... I need a Windows shell
-        set -f extras neww -n "Powershell" -c $WINHOME pwsh.exe
-    end
+    set -f session "Default Session"
+    set -f searchresult (tmux ls | grep $session)
 
-    tmux new-session -A -s "Default Session" -c ~ \; \
-        split-window -v -- fish -c projexp \; \
-        $extras
+    if test -z $searchresult
+        if type -q pwsh.exe
+            # We are on work laptop... Add a Windows shell
+            # WINHOME is declared on an untracked file
+            set -f extras neww -n "Powershell" -c $WINHOME pwsh.exe
+        end
+
+        tmux new-session -A -s $session -c ~ \; \
+            split-window -v -- fish -c projexp \; \
+            $extras
+    else
+        tmux attach -t $session
+    end
 end
 
 # PATH
