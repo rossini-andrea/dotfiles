@@ -17,7 +17,8 @@ require('mason-lspconfig').setup({
         "rust_analyzer",
         "zls",
         "tsserver",
-        "marksman"
+        "marksman",
+        "omnisharp",
     },
     handlers = {
         lsp_zero.default_setup,
