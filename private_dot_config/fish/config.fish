@@ -31,25 +31,6 @@ function gitlog
         --graph --decorate --all --full-history
 end
 
-function mytmux -d "Opens a default tmux session"
-    set -f session "Default Session"
-    set -f searchresult (tmux ls | grep $session)
-
-    if test -z $searchresult
-        if type -q pwsh.exe
-            # We are on work laptop... Add a Windows shell
-            # WINHOME is declared on an untracked file
-            set -f extras neww -n "Powershell" -c $WINHOME pwsh.exe
-        end
-
-        tmux new-session -A -s $session -c ~ \; \
-            split-window -v -- fish -c projexp \; \
-            $extras
-    else
-        tmux attach -t $session
-    end
-end
-
 # PATH
 set PATH $PATH $HOME/bin $HOME/.local/bin
 
@@ -63,6 +44,7 @@ alias ls "ls --color=auto"
 alias code "codium"
 alias gallery "sxiv -r ."
 alias st-term "pyserial-miniterm --eol LF -e /dev/ttyACM0 115200"
+alias tmh tmuxhere
 
 # Prompt
 starship init fish | source
