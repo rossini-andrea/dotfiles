@@ -1,11 +1,10 @@
 return {
-    "christoomey/vim-tmux-navigator",
-    "nvim-treesitter/playground",
-    "theprimeagen/harpoon",
-    "tpope/vim-fugitive",
     {
         "vhyrro/luarocks.nvim",
         priority = 1000,
+        opts = {
+            rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
+        },
         config = true,
     },
     {

@@ -34,5 +34,7 @@ s("n", "<leader>y", "\"+y")
 s("v", "<leader>y", "\"+y")
 s("n", "<leader>Y", "\"+Y")
 
+vim.o.termguicolors = true
+
 -- Plugins
 require("loadlazy")
