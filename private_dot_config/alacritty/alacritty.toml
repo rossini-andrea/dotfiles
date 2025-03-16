@@ -23,7 +23,7 @@
 #foreground = "#CCCCCC"
 
 import = [
-    "~/.config/alacritty/catppuccin-macchiato.toml"
+    "~/.config/alacritty/catppuccin-latte.toml"
 ]
 
 #[cursor]
