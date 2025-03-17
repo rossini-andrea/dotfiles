@@ -1,3 +1,30 @@
+
+#[cursor]
+#shape = "Beam"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Insert"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[general]
 #[colors.bright]
 #black = "#666666"
 #blue = "#3B8EEA"
@@ -26,32 +53,9 @@ import = [
     "~/.config/alacritty/catppuccin-latte.toml"
 ]
 
-#[cursor]
-#shape = "Beam"
+[terminal]
 
-[font.glyph_offset]
-x = 0
-y = 0
-
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-style = "Regular"
-
-[font.offset]
-x = 0
-y = 0
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "Insert"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "PasteSelection"
-key = "Insert"
-mods = "Shift"
-
-[shell]
+[terminal.shell]
 args = ["-c", "mytmux"]
 program = "/usr/bin/fish"
 
