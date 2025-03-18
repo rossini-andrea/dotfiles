@@ -42,9 +42,9 @@ require("catppuccin").setup({
                 Special = { fg = latte.blue }, -- (preferred) any special symbol
                 Type = { fg = latte.sapphire }, -- (preferred) int, long, char, etc.
 
-                LineNrAbove = { fg = latte.mauve, bold = false },
-                LineNr = { fg = latte.mauve, bold = true },
-                LineNrBelow = { fg = latte.mauve, bold = false },
+                LineNrAbove = { fg = latte.mauve, bg = latte.surface0, bold = false },
+                LineNr = { fg = latte.mauve, bg = latte.surface1, bold = true },
+                LineNrBelow = { fg = latte.mauve, bg = latte.surface0, bold = false },
             }
         end,
     }
