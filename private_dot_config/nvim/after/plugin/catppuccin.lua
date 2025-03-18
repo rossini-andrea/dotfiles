@@ -14,6 +14,12 @@ require("catppuccin").setup({
                 Function = { fg = latte.text },
                 Statement = { fg = latte.text },
                 Operator = { fg = latte.text },
+                ["@variable"] = { fg = latte.text },
+                ["@variable.member"] = { fg = latte.text },
+                ["@variable.parameter"] = { fg = latte.text },
+                ["@variable.builtin"] = { fg = latte.blue },
+                ["@function.call"] = { fg = latte.text },
+                ["@punctuation"] = { fg = latte.text },
                 String = { fg = latte.red },
                 Character = { fg = latte.red },
                 Number = { fg = latte.red },
@@ -35,6 +41,10 @@ require("catppuccin").setup({
                 Structure = { fg = latte.blue }, --  struct, union, enum, etc.
                 Special = { fg = latte.blue }, -- (preferred) any special symbol
                 Type = { fg = latte.sapphire }, -- (preferred) int, long, char, etc.
+
+                LineNrAbove = { fg = latte.mauve, bold = false },
+                LineNr = { fg = latte.mauve, bold = true },
+                LineNrBelow = { fg = latte.mauve, bold = false },
             }
         end,
     }
